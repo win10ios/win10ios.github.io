@@ -205,10 +205,11 @@ footer:
   owner:
     enable: true
     since: 2020
-  custom_text:
+  custom_text: |
+    <a href="https://icp.gov.moe/?keyword=20240611" target="_blank">萌ICP备20240611号</a> 2024 - 2025 © <a href="https://blog.999845.xyz" target="_blank">长夜小屋</a>丨技术支持：<a href="https://blog.xp6.top" target="_blank">xiapi</a>
   copyright: true # Copyright of theme and framework
 
-# aside (側邊欄)
+# aside (側邊欄)               
 # --------------------------------------
 
 aside:
@@ -758,7 +759,7 @@ subtitle:
   # source: 2  調用一句網（簡體） https://yijuzhan.com/
   # source: 3  調用今日詩詞（簡體） https://www.jinrishici.com/
   # subtitle 會先顯示 source , 再顯示 sub 的內容
-  source: false
+  source: true
   # 如果關閉打字效果，subtitle 只會顯示 sub 的第一行文字
   sub:
 

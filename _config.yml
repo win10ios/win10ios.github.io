@@ -103,3 +103,11 @@ theme: butterfly
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: ''
+  
+# Sitemap
+sitemap:
+  path: sitemap.xml
+  priority: 0.5
+  changefreq: daily
+  lastmod: true
+
