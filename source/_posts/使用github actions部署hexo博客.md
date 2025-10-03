@@ -1,68 +1,127 @@
 ---
-title: 使用github actions部署hexo博客
+title: 使用 GitHub Actions 部署 Hexo 博客
 date: 2025-08-09 21:03:13
 tags: 
-- web
+  - web
 categories: 
-- web
+  - web
 ---
-# 参考文章
-[如何优雅的使用Github Action服务来将Hexo部署到Github Pages][1]
-[HEXO系列教程 | 使用GitHub部署静态博客HEXO | 小白向教程][2]
-# GitHub
-## 1.创建仓库
-注册并登录一个GitHub账户【注册方法[2.2 准备 GitHub][3]】![github-1][4]![主界面][5]
-点击头像，进入仓库![主界面-头像][6]![仓库空][7]
-创建仓库【仓库名字为xx.github.io，并不是非要使用你的github的用户名作为xx，可以进行自定义，如我的为ioip.github.io】![新建仓库][8]![建好了][9]
-## 2.获取token
-点击头像- Settings-Developer Settings ![setting][10]
-在个人设置中新增一个Personal access tokens。至少要包含repo权限，然后记住token。
-这个token是给Github Action用的，Github Action会把Hexo编译部署到gh-pages分支。![token1][11]![token2][12]![token3][13]![token4][14]
-## 3.将token填入仓库
-随后在存放Hexo代码的仓库里把这个Token新增进去，名称为GH_TOKEN(随意，后面需要一致)。
-【注意：先回到仓库再点击setting】![miyao1][15]![密钥2][16]![秒哟3][17]
-## 4.获取ssh密钥【用于解决推送文件时GitHub国内的网络问题】
-你需要在本地电脑上面安装：
-nodejs（>16 版本，最新的应该有 20 版本）：[Node.js — Run JavaScript Everywhere][18]
- git（2.44.0）：[Git – Downloads][19]
-在某一个盘里面创建一个文件夹，名字叫 hexo，然后右键选择 Open Git Bash Here
-我们在里面输入`git config --global user.name "你的 GitHub 用户名"` `git config --global user.email "你的 GitHub 邮箱"`
-我们在命令行窗口中输入`ssh-keygen -t rsa -C "你的 GitHub 邮箱"`
-什么都不用管，一路回车就行。然后我们进入 C:\Users\ 用户名 \.ssh 目录（勾选显示 “隐藏的项目”）
-我们用记事本打开 id_rsa.pub 并复制里面的内容。![keyssh1][20]
-这个时候我们回到 GitHub，进入 Settings：![keyssh2][21]
-选择左边栏的 SSH and GPG keys，点击 New SSH key：![keyssh3][22]
-Title 随便取，然后把 id_rsa.pub 里面的内容到复制到 Key 中，点击 Add SSH key：![keyssh4][23]
-保存完毕以后，我们可以在本地验证一下连接。依旧在 Git Bash Here 界面中输入`ssh -T git@github.com`
-出现 “Are you sure……”，输入 yes 回车确认。若出现下图的提示即连接成功：![keyssh4][24]
-切换到ssh用于解决推送文件时GitHub国内的网络问题
-`$ git remote set-url origin git@github.com:luojunchong/PLAN.git`
-# 本地配置HEXO
-## 1. 初始化Hexo
-安装脚手架，初始化hexo，进入之前新建的hexo文件夹，进入后安装依赖。`npm install -g hexo-cli
+
+# 📚 参考文章
+
+- [如何优雅地使用 GitHub Action 服务将 Hexo 部署到 GitHub Pages](^1^)
+- [HEXO 系列教程 | 使用 GitHub 部署静态博客 HEXO | 小白向教程](^2^)
+
+---
+
+# 🐙 GitHub 操作流程
+
+## 1️⃣ 创建仓库
+
+注册并登录 GitHub 账号（参考：[准备 GitHub](^3^)）  
+进入主界面 → 点击头像 → 进入仓库页面  
+创建新仓库，命名为 `xx.github.io`（不强制使用用户名作为前缀）
+
+![创建仓库流程图](^4^)  
+![主界面](^5^)  
+![头像入口](^6^)  
+![空仓库示意](^7^)  
+![新建仓库](^8^)  
+![仓库创建成功](^9^)
+
+---
+
+## 2️⃣ 获取 Token
+
+进入：头像 → Settings → Developer Settings  
+创建 Personal access token，至少勾选 `repo` 权限  
+记住生成的 token，它将用于 GitHub Actions 自动部署
+
+![Token 设置流程](^10^)  
+![Token 权限选择](^11^)  
+![生成界面](^12^)  
+![复制保存](^13^)  
+![完成设置](^14^)
+
+---
+
+## 3️⃣ 添加 Token 到仓库
+
+进入 Hexo 项目仓库 → Settings → Secrets  
+新增名为 `GH_TOKEN` 的密钥（名称可自定义，但需与工作流一致）
+
+![添加密钥步骤](^15^)  
+![密钥界面](^16^)  
+![密钥添加成功](^17^)
+
+---
+
+## 4️⃣ 配置 SSH 密钥（解决国内网络问题）
+
+### 安装必要工具：
+
+- [Node.js（建议使用 v20）](^18^)  
+- [Git（建议使用 v2.44.0）](^19^)
+
+### 生成 SSH 密钥：
+
+```bash
+git config --global user.name "你的 GitHub 用户名"
+git config --global user.email "你的 GitHub 邮箱"
+ssh-keygen -t rsa -C "你的 GitHub 邮箱"
+```
+
+一路回车，进入 `C:\Users\你的用户名\.ssh`，复制 `id_rsa.pub` 内容  
+添加到 GitHub → Settings → SSH and GPG keys → New SSH key
+
+![生成密钥](^20^)  
+![进入设置](^21^)  
+![添加 SSH key](^22^)  
+![粘贴并保存](^23^)  
+![验证连接成功](^24^)
+
+### 切换远程地址为 SSH：
+
+```bash
+git remote set-url origin git@github.com:yourusername/your-repo.git
+```
+
+---
+
+# 🏗️ 本地配置 Hexo
+
+## 1️⃣ 初始化 Hexo 项目
+
+```bash
+npm install -g hexo-cli
 hexo init blog
 cd blog
 npm install
-`
-## 2. 初始化仓库
-`git init
+```
+
+## 2️⃣ 初始化 Git 仓库
+
+```bash
+git init
 git remote add origin https://github.com/yourusername/your-repo.git
 git add .
 git commit -m "Initial commit"
 git push -u origin main
-`
-## 3. 配置Github Action工作流
-在.github文件夹下新增workflows文件夹，然后新增deploy.yml文件，内容如下。
+```
 
-里面有个node-version要和你本地的node一致。【使用node -v获取】
+---
 
-步骤大致意思就是使用ubuntu-latest作为基础环境，然后安装各种依赖，随后hexo generate生成博客网站静态文件夹，
-把这个文件夹推送到同一仓库的gh-pages分支。`name: Deploy Hexo to GitHub Pages
+# ⚙️ 配置 GitHub Actions 工作流
+
+在项目根目录下创建 `.github/workflows/deploy.yml` 文件，内容如下：
+
+```yaml
+name: Deploy Hexo to GitHub Pages
 
 on:
   push:
     branches:
-      - main  # 当推送到 main 分支时触发
+      - main
 
 jobs:
   build:
@@ -71,8 +130,6 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
-        with:
-          submodules: false  # 禁用子模块检查
 
       - name: Setup Node.js
         uses: actions/setup-node@v2
@@ -106,16 +163,31 @@ jobs:
           git add -A
           git commit -m "Create by workflows"
           git remote add origin https://${{ secrets.GH_TOKEN }}@github.com/yourusername/your-repo.git
-          git push origin HEAD:gh-pages -f`
-## 3. 推送验证
-把刚才更新的所有文件都推送一遍，github就会触发工作流，然后去网站看工作流运转的如何。
-等一切运转完毕，就会发现仓库多出一个gh-pages分支。
-`git add .
+          git push origin HEAD:gh-pages -f
+```
+
+---
+
+## 3️⃣ 推送验证
+
+```bash
+git add .
 git commit -m "Initial commit 2"
 git push -u origin main
-`
-## 4. 配置Github Pages
-在仓库settings中配置page来源为gh-pages分支即可。等待网站部署完毕，就可以看了。网站链接可以在settings的GitHub Pages看到，也可以去action里看到。![img3][25]
+```
+
+GitHub 会自动触发工作流，生成 `gh-pages` 分支。
+
+---
+
+## 4️⃣ 配置 GitHub Pages
+
+进入仓库 → Settings → Pages  
+选择 `gh-pages` 分支作为发布源  
+部署完成后即可访问你的博客网站
+
+![GitHub Pages 设置](^25^)
+
 
 
 
@@ -143,4 +215,5 @@ git push -u origin main
   [22]: https://tp.999845.xyz/img/2025/08/d5902aff75ad97ba933596b7685665ec.png
   [23]: https://tp.999845.xyz/img/2025/08/f14834376fc7cf047eb0df227eebd2c9.png
   [24]: https://tp.999845.xyz/img/2025/08/8074dc164fc7536ada5cb9c896ace329.png
+
   [25]: https://tp.999845.xyz/img/2025/08/1f31c8f82d323f63190230a0f7eadb04.PNG
