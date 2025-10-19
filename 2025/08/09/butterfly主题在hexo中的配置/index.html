@@ -1,0 +1,218 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>butterfly主题在hexo中的配置 | 长夜小屋</title><meta name="author" content="ioip"><meta name="copyright" content="ioip"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="1. 安装Butterfly主题方法一：Git克隆（推荐）bash cd themes git clone https:&#x2F;&#x2F;github.com&#x2F;jerryc127&#x2F;hexo-theme-butterfly.git –depth&#x3D;1 方法二：手动下载 从Butterfly Releases下载最新版 解压到themes&#x2F;butterfly目录  2. 去除子模块绑定步骤说明bash解除子">
+<meta property="og:type" content="article">
+<meta property="og:title" content="butterfly主题在hexo中的配置">
+<meta property="og:url" content="https://blog.999845.xyz/2025/08/09/butterfly%E4%B8%BB%E9%A2%98%E5%9C%A8hexo%E4%B8%AD%E7%9A%84%E9%85%8D%E7%BD%AE/index.html">
+<meta property="og:site_name" content="长夜小屋">
+<meta property="og:description" content="1. 安装Butterfly主题方法一：Git克隆（推荐）bash cd themes git clone https:&#x2F;&#x2F;github.com&#x2F;jerryc127&#x2F;hexo-theme-butterfly.git –depth&#x3D;1 方法二：手动下载 从Butterfly Releases下载最新版 解压到themes&#x2F;butterfly目录  2. 去除子模块绑定步骤说明bash解除子">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://blog.999845.xyz/img/d.jpg">
+<meta property="article:published_time" content="2025-08-09T21:03:13.000Z">
+<meta property="article:modified_time" content="2025-10-19T04:02:59.240Z">
+<meta property="article:author" content="ioip">
+<meta property="article:tag" content="web">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://blog.999845.xyz/img/d.jpg"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "butterfly主题在hexo中的配置",
+  "url": "https://blog.999845.xyz/2025/08/09/butterfly%E4%B8%BB%E9%A2%98%E5%9C%A8hexo%E4%B8%AD%E7%9A%84%E9%85%8D%E7%BD%AE/",
+  "image": "https://blog.999845.xyz/img/d.jpg",
+  "datePublished": "2025-08-09T21:03:13.000Z",
+  "dateModified": "2025-10-19T04:02:59.240Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "ioip",
+      "url": "https://blog.999845.xyz"
+    }
+  ]
+}</script><link rel="shortcut icon" href="/img/night.jpeg"><link rel="canonical" href="https://blog.999845.xyz/2025/08/09/butterfly%E4%B8%BB%E9%A2%98%E5%9C%A8hexo%E4%B8%AD%E7%9A%84%E9%85%8D%E7%BD%AE/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=5.4.3"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.7.2/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.12.0/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'butterfly主题在hexo中的配置',
+  isHighlightShrink: false,
+  isToc: true,
+  pageType: 'post'
+}</script><meta name="generator" content="Hexo 7.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/d.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">27</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">6</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">7</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-list"></i><span> 链接</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></li><li><a class="site-page child" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></li></ul></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(/img/dran.jpeg);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">长夜小屋</span></a><a class="nav-page-title" href="/"><span class="site-name">butterfly主题在hexo中的配置</span><span class="site-name"><i class="fa-solid fa-circle-arrow-left"></i><span>  返回首页</span></span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-list"></i><span> 链接</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></li><li><a class="site-page child" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></li></ul></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">butterfly主题在hexo中的配置</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2025-08-09T21:03:13.000Z" title="发表于 2025-08-09 21:03:13">2025-08-09</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2025-10-19T04:02:59.240Z" title="更新于 2025-10-19 04:02:59">2025-10-19</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/web/">web</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><h2 id="1-安装Butterfly主题"><a href="#1-安装Butterfly主题" class="headerlink" title="1. 安装Butterfly主题"></a>1. 安装Butterfly主题</h2><h3 id="方法一：Git克隆（推荐）"><a href="#方法一：Git克隆（推荐）" class="headerlink" title="方法一：Git克隆（推荐）"></a>方法一：Git克隆（推荐）</h3><p>bash</p>
+<p>cd themes</p>
+<p>git clone <a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly.git">https://github.com/jerryc127/hexo-theme-butterfly.git</a></p>
+<p>–depth&#x3D;1</p>
+<h3 id="方法二：手动下载"><a href="#方法二：手动下载" class="headerlink" title="方法二：手动下载"></a>方法二：手动下载</h3><ol>
+<li>从<a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly/releases">Butterfly Releases</a>下载最新版</li>
+<li>解压到<code>themes/butterfly</code>目录</li>
+</ol>
+<h2 id="2-去除子模块绑定"><a href="#2-去除子模块绑定" class="headerlink" title="2. 去除子模块绑定"></a>2. 去除子模块绑定</h2><h3 id="步骤说明"><a href="#步骤说明" class="headerlink" title="步骤说明"></a>步骤说明</h3><p>bash<br>解除子模块关联</p>
+<p>git rm –cached themes&#x2F;butterfly</p>
+<p>rm -rf themes&#x2F;butterfly&#x2F;.git<br>清理残留配置（可选）</p>
+<p>git config -f .gitmodules –remove-section submodule.themes&#x2F;butterfly</p>
+<p>rm -rf .git&#x2F;modules&#x2F;themes&#x2F;butterfly</p>
+<h3 id="文件结构验证"><a href="#文件结构验证" class="headerlink" title="文件结构验证"></a>文件结构验证</h3><p>确保处理后目录包含：</p>
+<p>themes&#x2F;butterfly&#x2F;</p>
+<p>├── _config.yml # 主配置文件（27KB）</p>
+<p>├── layout&#x2F; # 模板文件</p>
+<p>├── source&#x2F; # 静态资源</p>
+<p>├── scripts&#x2F; # 脚本文件</p>
+<p>└── languages&#x2F; # 多语言文件</p>
+<h2 id="3-推送到GitHub仓库"><a href="#3-推送到GitHub仓库" class="headerlink" title="3. 推送到GitHub仓库"></a>3. 推送到GitHub仓库</h2><h3 id="配置Hexo"><a href="#配置Hexo" class="headerlink" title="配置Hexo"></a>配置Hexo</h3><p>修改<code>_config.yml</code>：</p>
+<p>yaml</p>
+<p>theme: butterfly</p>
+<h3 id="提交变更"><a href="#提交变更" class="headerlink" title="提交变更"></a>提交变更</h3><p>bash</p>
+<p>git add themes&#x2F;butterfly</p>
+<p>git commit -m “feat: 添加butterfly主题并解除子模块”</p>
+<p>git push origin main</p>
+<h2 id="4-主题更新方法"><a href="#4-主题更新方法" class="headerlink" title="4. 主题更新方法"></a>4. 主题更新方法</h2><h3 id="手动更新"><a href="#手动更新" class="headerlink" title="手动更新"></a>手动更新</h3><ol>
+<li>备份<code>_config.yml</code>和自定义文件</li>
+<li>覆盖<code>themes/butterfly</code>目录</li>
+<li>恢复配置文件</li>
+</ol>
+<h3 id="自动化建议"><a href="#自动化建议" class="headerlink" title="自动化建议"></a>自动化建议</h3><p>yaml<br>.github&#x2F;workflows&#x2F;update-theme.yml</p>
+<p>jobs:</p>
+<p>update:</p>
+<p>steps:</p>
+<pre><code>uses: actions/checkout@v4
+
+run: |
+
+rm -rf themes/butterfly
+
+git clone https://github.com/jerryc127/hexo-theme-butterfly
+
+themes/butterfly
+
+cp custom_config.yml themes/butterfly/_config.yml
+</code></pre>
+<h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><ol>
+<li>操作前备份<code>_config.yml</code>（27KB配置文件）</li>
+<li>不要提交<code>themes/butterfly/.github/</code>目录</li>
+<li>使用<code>.gitignore</code>过滤临时文件：</li>
+</ol>
+<p>themes&#x2F;butterfly&#x2F;.github&#x2F;</p>
+<p>themes&#x2F;butterfly&#x2F;node_modules&#x2F;</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://blog.999845.xyz">ioip</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://blog.999845.xyz/2025/08/09/butterfly%E4%B8%BB%E9%A2%98%E5%9C%A8hexo%E4%B8%AD%E7%9A%84%E9%85%8D%E7%BD%AE/">https://blog.999845.xyz/2025/08/09/butterfly%E4%B8%BB%E9%A2%98%E5%9C%A8hexo%E4%B8%AD%E7%9A%84%E9%85%8D%E7%BD%AE/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="https://blog.999845.xyz" target="_blank">长夜小屋</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/web/">web</a></div><div class="post-share"><div class="social-share" data-image="/img/d.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.4/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.4/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related" href="/2025/08/09/%E4%BD%BF%E7%94%A8github%20actions%E9%83%A8%E7%BD%B2hexo%E5%8D%9A%E5%AE%A2/" title="使用 GitHub Actions 部署 Hexo 博客"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info"><div class="info-1"><div class="info-item-1">上一篇</div><div class="info-item-2">使用 GitHub Actions 部署 Hexo 博客</div></div><div class="info-2"><div class="info-item-1">📚 参考文章 如何优雅地使用 GitHub Action 服务将 Hexo 部署到 GitHub Pages HEXO 系列教程 | 使用 GitHub 部署静态博客 HEXO | 小白向教程   🐙 GitHub 操作流程1️⃣ 创建仓库注册并登录 GitHub 账号进入主界面 → 点击头像 → 进入仓库页面创建新仓库，命名为 xx.github.io（不强制使用用户名作为前缀）   2️⃣ 获取 Token进入：头像 → Settings → Developer Settings创建 Personal access token，至少勾选 repo 权限记住生成的 token，它将用于 GitHub Actions 自动部署   3️⃣ 添加 Token 到仓库进入 Hexo 项目仓库 → Settings → Secrets新增名为 GH_TOKEN 的密钥（名称可自定义，但需与工作流一致）   4️⃣ 配置 SSH 密钥（解决国内网络问题）安装必要工具： Node.js（建议使用 v20）   Git（建议使用 v2.44.0）  生成 SSH 密钥：123git co...</div></div></div></a><a class="pagination-related" href="/2025/07/29/%E8%B9%A6%E8%B9%A6%E5%BA%8A%E5%A4%A7%E5%B0%8F%E5%A7%90%E9%A9%BE%E5%88%B0/" title="蹦蹦床大小姐驾到？"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-right"><div class="info-1"><div class="info-item-1">下一篇</div><div class="info-item-2">蹦蹦床大小姐驾到？</div></div><div class="info-2"><div class="info-item-1">事情概要:QQ用户BBC冒用BBC授权(英国广播公司)，在其他用户QQ空间下进行辱骂，并且批图出一张14w账单 蹦蹦床聊天记录合集在别人的QQ空间无理取闹 14万账单 被群友揭穿 装疯卖傻 继续恶心人 </div></div></div></a></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><a class="pagination-related" href="/2025/08/14/mcsmanager%E4%B8%AD%E7%9A%84Dockerfile%E7%BC%96%E5%86%99/" title="mcsmanager中的Dockerfile编写"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-08-14</div><div class="info-item-2">mcsmanager中的Dockerfile编写</div></div><div class="info-2"><div class="info-item-1">基于 Debian 11，挂载 &#x2F;data的一个示例 &#96;FROM debian:11 ENV TZ&#x3D;Asia&#x2F;Shanghai 使用清华源加速 apt 更新RUN sed -i ‘s|http://deb.debian.org|http://mirrors.tuna.tsinghua.edu.cn|g‘ &#x2F;etc&#x2F;apt&#x2F;sources.list &amp;&amp;     sed -i ‘s|http://security.debian.org|http://mirrors.tuna.tsinghua.edu.cn|g‘ &#x2F;etc&#x2F;apt&#x2F;sources.list 安装必要工具并设置时区RUN apt update &amp;&amp;     DEBIAN_FRONTEND&#x3D;noninteractive apt install -y     tzdata     libcurl4     curl     wget     unzip     bash     sud...</div></div></div></a><a class="pagination-related" href="/2025/08/09/%E4%BD%BF%E7%94%A8github%20actions%E9%83%A8%E7%BD%B2hexo%E5%8D%9A%E5%AE%A2/" title="使用 GitHub Actions 部署 Hexo 博客"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-08-09</div><div class="info-item-2">使用 GitHub Actions 部署 Hexo 博客</div></div><div class="info-2"><div class="info-item-1">📚 参考文章 如何优雅地使用 GitHub Action 服务将 Hexo 部署到 GitHub Pages HEXO 系列教程 | 使用 GitHub 部署静态博客 HEXO | 小白向教程   🐙 GitHub 操作流程1️⃣ 创建仓库注册并登录 GitHub 账号进入主界面 → 点击头像 → 进入仓库页面创建新仓库，命名为 xx.github.io（不强制使用用户名作为前缀）   2️⃣ 获取 Token进入：头像 → Settings → Developer Settings创建 Personal access token，至少勾选 repo 权限记住生成的 token，它将用于 GitHub Actions 自动部署   3️⃣ 添加 Token 到仓库进入 Hexo 项目仓库 → Settings → Secrets新增名为 GH_TOKEN 的密钥（名称可自定义，但需与工作流一致）   4️⃣ 配置 SSH 密钥（解决国内网络问题）安装必要工具： Node.js（建议使用 v20）   Git（建议使用 v2.44.0）  生成 SSH 密钥：123git co...</div></div></div></a><a class="pagination-related" href="/2024/07/24/%E5%85%8D%E8%B4%B9%E8%99%9A%E6%8B%9F%E4%B8%BB%E6%9C%BA%E5%90%88%E9%9B%86%E3%80%902025%E6%9C%80%E6%96%B0%E6%B5%8B%E8%AF%95%E3%80%91/" title="免费虚拟主机合集【2025最新测试】"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2024-07-24</div><div class="info-item-2">免费虚拟主机合集【2025最新测试】</div></div><div class="info-2"><div class="info-item-1">2免费虚拟主机【时间沉淀】3.清欢云点我前往mnbt虚拟主机*1 2G存储   速度较快容易炸 建议使用远程mysql数据库 </div></div></div></a><a class="pagination-related" href="/2024/07/20/%E5%85%8D%E8%B4%B9%E5%85%AC%E7%9B%8A%E8%99%9A%E6%8B%9F%E4%B8%BB%E6%9C%BA%E6%90%AD%E5%BB%BA%E5%85%B1%E4%BA%AB%E7%A7%81%E4%BA%BA%E4%BA%91%E7%9B%98/" title="免费公益虚拟主机搭建共享私人云盘"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2024-07-20</div><div class="info-item-2">免费公益虚拟主机搭建共享私人云盘</div></div><div class="info-2"><div class="info-item-1">前言： 1.文件部署： 按照图中的网址账号密码登陆，登录后如图所示然后点击右上角三条杠，选择文件管理-在线文件管理器进入根目录点击wwwroot文件夹，创建一个自己的文件夹【请用自己的QQ号】，如图点击进入自己的文件夹，上传彩虹共享网盘文件点我下载彩虹云盘源码然后点击解压文件 2.域名绑定: 获得二级域名：灵空二级域名快乐二级域名若风二级域名解析二级域名：以若风二级域名解析为例,首先注册并登录，来到这个界面选择添加，如图所示进行填写主机记录改成你喜欢的数字&#x2F;字母组合，选择确定，将解析好的域名复制。 3：云盘安装： 根据下图完成安装大功告成</div></div></div></a><a class="pagination-related" href="/2025/08/24/%E5%9C%A8CentOS%207.6%E4%B8%8A%E7%BC%96%E8%AF%91%E5%AE%89%E8%A3%85Python%203.8%E5%AE%8C%E6%95%B4%E6%8C%87%E5%8D%97/" title="在CentOS 7.6上编译安装Python 3.8完整指南"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-08-24</div><div class="info-item-2">在CentOS 7.6上编译安装Python 3.8完整指南</div></div><div class="info-2"><div class="info-item-1">CentOS 7.6 源码编译安装Python 3.8教程本文详细介绍在CentOS 7系统上编译安装Python 3.8的完整流程。请提前执行centos7换源命令确保yum工具正常sed -i -r -e &#39;s|^mirrorlist=|#mirrorlist=|g&#39; -e &#39;s|^#?baseurl=http://mirror.centos.org/centos|baseurl=https://vault.centos.org/centos|g&#39; -e &#39;s|^#?baseurl=http://mirror.centos.org/altarch|baseurl=https://vault.centos.org/altarch|g&#39; -e &#39;s|^#?baseurl=http://download.fedoraproject.org|baseurl=http://download.fedoraproject.org|g&#39; /etc/yum.repos.d/CentOS-*.repoyum clean all &a...</div></div></div></a></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/d.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">ioip</div><div class="author-info-description">午梦千山，窗阴一箭</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">27</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">6</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">7</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://win10ios.github.io/"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/win10ios" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a><a class="social-icon" href="mailto:3519823556@qq.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #4a7dbe;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">时光之味，日月沉香</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E5%AE%89%E8%A3%85Butterfly%E4%B8%BB%E9%A2%98"><span class="toc-number">1.</span> <span class="toc-text">1. 安装Butterfly主题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%B9%E6%B3%95%E4%B8%80%EF%BC%9AGit%E5%85%8B%E9%9A%86%EF%BC%88%E6%8E%A8%E8%8D%90%EF%BC%89"><span class="toc-number">1.1.</span> <span class="toc-text">方法一：Git克隆（推荐）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%B9%E6%B3%95%E4%BA%8C%EF%BC%9A%E6%89%8B%E5%8A%A8%E4%B8%8B%E8%BD%BD"><span class="toc-number">1.2.</span> <span class="toc-text">方法二：手动下载</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E5%8E%BB%E9%99%A4%E5%AD%90%E6%A8%A1%E5%9D%97%E7%BB%91%E5%AE%9A"><span class="toc-number">2.</span> <span class="toc-text">2. 去除子模块绑定</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%AD%A5%E9%AA%A4%E8%AF%B4%E6%98%8E"><span class="toc-number">2.1.</span> <span class="toc-text">步骤说明</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E7%BB%93%E6%9E%84%E9%AA%8C%E8%AF%81"><span class="toc-number">2.2.</span> <span class="toc-text">文件结构验证</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E6%8E%A8%E9%80%81%E5%88%B0GitHub%E4%BB%93%E5%BA%93"><span class="toc-number">3.</span> <span class="toc-text">3. 推送到GitHub仓库</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%85%8D%E7%BD%AEHexo"><span class="toc-number">3.1.</span> <span class="toc-text">配置Hexo</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8F%90%E4%BA%A4%E5%8F%98%E6%9B%B4"><span class="toc-number">3.2.</span> <span class="toc-text">提交变更</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E4%B8%BB%E9%A2%98%E6%9B%B4%E6%96%B0%E6%96%B9%E6%B3%95"><span class="toc-number">4.</span> <span class="toc-text">4. 主题更新方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%89%8B%E5%8A%A8%E6%9B%B4%E6%96%B0"><span class="toc-number">4.1.</span> <span class="toc-text">手动更新</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%87%AA%E5%8A%A8%E5%8C%96%E5%BB%BA%E8%AE%AE"><span class="toc-number">4.2.</span> <span class="toc-text">自动化建议</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9"><span class="toc-number">5.</span> <span class="toc-text">注意事项</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/08/24/%E5%9C%A8CentOS%207.6%E4%B8%8A%E7%BC%96%E8%AF%91%E5%AE%89%E8%A3%85Python%203.8%E5%AE%8C%E6%95%B4%E6%8C%87%E5%8D%97/" title="在CentOS 7.6上编译安装Python 3.8完整指南">在CentOS 7.6上编译安装Python 3.8完整指南</a><time datetime="2025-08-24T18:47:32.000Z" title="发表于 2025-08-24 18:47:32">2025-08-24</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/08/14/mcsmanager%E4%B8%AD%E7%9A%84Dockerfile%E7%BC%96%E5%86%99/" title="mcsmanager中的Dockerfile编写">mcsmanager中的Dockerfile编写</a><time datetime="2025-08-14T23:57:39.000Z" title="发表于 2025-08-14 23:57:39">2025-08-14</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/08/09/butterfly%E4%B8%BB%E9%A2%98%E5%9C%A8hexo%E4%B8%AD%E7%9A%84%E9%85%8D%E7%BD%AE/" title="butterfly主题在hexo中的配置">butterfly主题在hexo中的配置</a><time datetime="2025-08-09T21:03:13.000Z" title="发表于 2025-08-09 21:03:13">2025-08-09</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/08/09/%E4%BD%BF%E7%94%A8github%20actions%E9%83%A8%E7%BD%B2hexo%E5%8D%9A%E5%AE%A2/" title="使用 GitHub Actions 部署 Hexo 博客">使用 GitHub Actions 部署 Hexo 博客</a><time datetime="2025-08-09T21:03:13.000Z" title="发表于 2025-08-09 21:03:13">2025-08-09</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/07/29/%E8%B9%A6%E8%B9%A6%E5%BA%8A%E5%A4%A7%E5%B0%8F%E5%A7%90%E9%A9%BE%E5%88%B0/" title="蹦蹦床大小姐驾到？">蹦蹦床大小姐驾到？</a><time datetime="2025-07-29T21:03:13.000Z" title="发表于 2025-07-29 21:03:13">2025-07-29</time></div></div></div></div></div></div></main><footer id="footer"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2020 - 2025 By ioip</span></div><div class="footer_custom_text"><a href="https://icp.gov.moe/?keyword=20240611" target="_blank">萌ICP备20240611号</a> 2024 - 2025 © <a href="https://blog.999845.xyz" target="_blank">长夜小屋</a>丨技术支持：<a href="https://blog.xp6.top" target="_blank">xiapi</a>
+</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.4.3"></script><script src="/js/main.js?v=5.4.3"></script><script src="/js/tw_cn.js?v=5.4.3"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

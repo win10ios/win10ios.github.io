@@ -1,0 +1,238 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>长夜小屋 - ioip||梦幻方块</title><meta name="author" content="ioip"><meta name="copyright" content="ioip"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="午梦千山，窗阴一箭">
+<meta property="og:type" content="website">
+<meta property="og:title" content="长夜小屋">
+<meta property="og:url" content="https://blog.999845.xyz/page/3/index.html">
+<meta property="og:site_name" content="长夜小屋">
+<meta property="og:description" content="午梦千山，窗阴一箭">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://blog.999845.xyz/img/d.jpg">
+<meta property="article:author" content="ioip">
+<meta property="article:tag" content="博客, minecraft, ioip,长夜小屋">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://blog.999845.xyz/img/d.jpg"><script type="application/ld+json"></script><link rel="shortcut icon" href="/img/night.jpeg"><link rel="canonical" href="https://blog.999845.xyz/page/3/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=5.4.3"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.7.2/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.12.0/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '长夜小屋',
+  isHighlightShrink: false,
+  isToc: false,
+  pageType: 'home'
+}</script><meta name="generator" content="Hexo 7.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/d.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">27</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">6</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">7</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-list"></i><span> 链接</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></li><li><a class="site-page child" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></li></ul></div></div></div></div><div class="page" id="body-wrap"><header class="full_page" id="page-header" style="background-image: url(/img/dran.jpeg);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">长夜小屋</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-list"></i><span> 链接</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></li><li><a class="site-page child" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></li></ul></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="site-info"><h1 id="site-title">长夜小屋</h1><div id="site_social_icons"><a class="social-icon" href="https://github.com/win10ios" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a><a class="social-icon" href="mailto:3519823556@qq.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #4a7dbe;"></i></a></div></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts nc" id="recent-posts"><div class="recent-post-items"><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2024/10/07/%E5%AF%92%E7%A7%8B%E5%B0%86%E8%87%B3/" title="寒秋将至">寒秋将至</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2024-10-07T16:03:13.000Z" title="发表于 2024-10-07 16:03:13">2024-10-07</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E6%95%A3%E6%96%87/">散文</a></span></div><div class="content">一朝寒雨知秋来，那雨绵绵下了一夜，裹挟着无尽寒秋，带着远方的痛苦和阴云，逐渐淹没往日的谈笑风生。那日春花秋月，那夜烟雨中的盛夏渐渐流逝，他最终也没有留住夏。阴云遮住了蓝天，他大口大口的喘着粗气，层云早就遮住了他锐利的锋芒，何以拨云雾，何以见蓝天，前方是长夜漫漫，迷雾渐渐涌来，那灯塔，那黑暗中的光明，也许早已熄灭，或被黑夜吞噬。  寒雨连江夜入吴 平明送客楚山孤  那日秋风吹散了思念，随细雨逝去，始于未知，终于未知，淡灰色的阴云，笼罩四方，他淡淡道：“又是一年深秋。”不久，便凛冬将至，盛夏光年，还会有结局吗，那年盛夏，那年深秋，水塔下的不甘与痴情，似乎只有故土依旧，失去了熟悉的温暖，冷酷严寒延伸至天边，不知踪迹。他也曾道：“那日晴芳好。”那日午后，阳光正好，微风不躁。他无力看向窗外，是压力吗，不是；是悲哀吗，不是；还是清醒时彷徨迷茫，堕入无边黑暗困境的焦虑？够了，别说了？还能说些什么，是那日的风吹散了焦虑，是能迷雾中的灯塔在指引方向，是那条土径盛夏时扬起的漫天尘土，蓦然回首，他在小院里欢笑，那时的小船才刚刚扬帆起航，那时晴空万里，直下看山河；那时渴望大鹏一日同风起、扶摇直上九万里；...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2024/08/30/%E7%A7%8B%E6%B8%90%E6%B7%B1/" title="秋渐深">秋渐深</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2024-08-30T16:50:13.000Z" title="发表于 2024-08-30 16:50:13">2024-08-30</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E6%95%A3%E6%96%87/">散文</a></span></div><div class="content">浅灰色的天空逐渐吞噬着盛夏的余晖，叶，又开始萧萧落下，逐渐空空的枝头，逐渐冷寂的世界。秋来了，那个让我惶恐的秋，我留恋盛夏青空的飞鸟群逐，落日小石河边炫丽多彩的云霞，那矗立在故土上的水塔，那童年无边的幻想，那条蓝天下稻田边扬起黄土的小道，那群山中悠然流淌的小溪与岸边的芦苇翩翩…… 可是，秋来了，他无情带走了盛夏所留下的一切记忆，只剩寒风肆掠，逐渐冷寂的心。深思，从秋开始，又由秋终结，能想一些什么呢？大概是那一次又次又的逃避，那时秋渐深，落叶空枝，躲在被窝里，忘掉失望，沉浸在由自己亲手搭建的虚伪但快乐的牢笼，其实鸵鸟也挺好的，至少他还能逃避，现在我还能逃避吗？ 今年秋终究还是来了，带着雾霭与阴云，遮住了那广袤无垠的蓝天，我想，在高一，初一意气风发、锋芒毕露的的他还会回来吗，也许不会，他已经在迷雾中迷失了方向，他亲手埋葬了在黑暗中的光明，失去的唯一的灯塔，前几年我非常爱看一本同人小说，《哈利波特之我是传奇》，那座黑湖，那块古老的银币，那句“寻找黑暗中的光明”，现在光明身在何处，我又身在何处？太久的沉寂封印了翅翼；太久的失落，失去的希望。太久的孤独，失去了炽热的心灵。初一的他怀揣着炽热...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2024/08/29/Minecraft0.14.3%E5%85%8D%E8%B4%B9%E5%BC%80%E6%9C%8D%E6%95%99%E7%A8%8B%E3%80%90%E6%B0%B8%E4%B9%85%E5%85%8D%E8%B4%B9%E5%85%A8%E7%89%88%E6%9C%AC%E9%80%9A%E7%94%A8%E3%80%91/" title="Minecraft0.14.3免费开服教程【永久免费全版本通用】">Minecraft0.14.3免费开服教程【永久免费全版本通用】</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2024-08-29T10:33:39.000Z" title="发表于 2024-08-29 10:33:39">2024-08-29</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/mc%E6%95%99%E7%A8%8B/">mc教程</a></span></div><div class="content">一.免费服务器领取【包含150G免费防御】1.注册&#x2F;登陆云计算账号点我前往2.进入控制台3.点击菜单-积分中心-赚取积分完成简单任务获取积分再次点击菜单，点击积分中心-积分商城找到免费游戏云领取-游戏云mcsm面板服-E5入门版，点击领取点击确定 二.免费服务器配置 点击菜单-云产品2找到游戏云，点击我的产品3.进入实例根据以下配置填写!请跟着图片一步步操作4.复制账号密码，点击子用户面板，填写刚才复制的账号与密码，进入mcsmanagers控制面板  三.免费服务器子用户面板配置1.点击文件管理，删掉所有文件，点击上传文件，上传开服包，点我下载开服包并且解压文件(使用GBK简体中文格式解压)2.点击server.properties编辑里面的设置项将端口修改为你服务器端口（就是控制台右上角显示的地址的冒号后面的数字，比如我的是55126）3.回到控制台点击开启开启服务器，语言选择(不是还用问?你是哪国人就选拿过的语言) 四.免费服务器视频教程{bilibili bvid&#x3D;”BV1pmAye8Equ” page&#x3D;”0”&#x2F;} </div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2024/07/24/%E5%85%8D%E8%B4%B9%E8%99%9A%E6%8B%9F%E4%B8%BB%E6%9C%BA%E5%90%88%E9%9B%86%E3%80%902025%E6%9C%80%E6%96%B0%E6%B5%8B%E8%AF%95%E3%80%91/" title="免费虚拟主机合集【2025最新测试】">免费虚拟主机合集【2025最新测试】</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2024-07-24T16:03:13.000Z" title="发表于 2024-07-24 16:03:13">2024-07-24</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BA/">网站搭建</a></span></div><div class="content">2免费虚拟主机【时间沉淀】3.清欢云点我前往mnbt虚拟主机*1 2G存储   速度较快容易炸 建议使用远程mysql数据库 </div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2024/07/20/%E5%85%8D%E8%B4%B9%E5%85%AC%E7%9B%8A%E8%99%9A%E6%8B%9F%E4%B8%BB%E6%9C%BA%E6%90%AD%E5%BB%BA%E5%85%B1%E4%BA%AB%E7%A7%81%E4%BA%BA%E4%BA%91%E7%9B%98/" title="免费公益虚拟主机搭建共享私人云盘">免费公益虚拟主机搭建共享私人云盘</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2024-07-20T12:03:13.000Z" title="发表于 2024-07-20 12:03:13">2024-07-20</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BA/">网站搭建</a></span></div><div class="content">前言： 1.文件部署： 按照图中的网址账号密码登陆，登录后如图所示然后点击右上角三条杠，选择文件管理-在线文件管理器进入根目录点击wwwroot文件夹，创建一个自己的文件夹【请用自己的QQ号】，如图点击进入自己的文件夹，上传彩虹共享网盘文件点我下载彩虹云盘源码然后点击解压文件 2.域名绑定: 获得二级域名：灵空二级域名快乐二级域名若风二级域名解析二级域名：以若风二级域名解析为例,首先注册并登录，来到这个界面选择添加，如图所示进行填写主机记录改成你喜欢的数字&#x2F;字母组合，选择确定，将解析好的域名复制。 3：云盘安装： 根据下图完成安装大功告成</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2024/07/15/%E6%98%9F%E7%A9%BA%E8%81%94%E6%9C%BA%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B%E3%80%90%E7%BB%AD%E7%AF%87%E6%B8%B8%E6%88%8F%E8%81%94%E6%9C%BA%E3%80%91/" title="星空联机使用教程【星空联机篇】">星空联机使用教程【星空联机篇】</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2024-07-15T16:03:13.000Z" title="发表于 2024-07-15 16:03:13">2024-07-15</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/mc%E6%95%99%E7%A8%8B/">mc教程</a></span></div><div class="content">1.打开Minecraft【此处使用mcpe0.14做演示】进入游戏，点击选项。 2.将如图所示的两个按钮开启 3.退回主界面，点击游戏 4.随便进入一个存档5.保持游戏前台界面6.让你朋友也用上述步骤部署好星空，让他填入服务器ip为你星空主界面的ip+端口19132，即可愉快联机 【务必保证联机方与主机方用的不同账号！】你不会添加服务器？看图片教程</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2024/07/14/%E6%98%9F%E7%A9%BA%E8%81%94%E6%9C%BA%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B%E3%80%90%E6%98%9F%E7%A9%BA%E9%85%8D%E7%BD%AE%E7%AF%87%E3%80%91/" title="星空联机使用教程【星空配置篇】">星空联机使用教程【星空配置篇】</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2024-07-14T16:03:13.000Z" title="发表于 2024-07-14 16:03:13">2024-07-14</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/mc%E6%95%99%E7%A8%8B/">mc教程</a></span></div><div class="content">一.配置星空win7极其以上x64系统，IOSOS14-最新系统，安卓支持安卓6极其以上系统&#x2F;星空请及时点击下载链接更新到最新5.00版本1.下载星空点我下载星空2.打开星空，登录账号免费星空共享账号miuiios:ddd miuiios:zhangsan miuiios:lisi miuiios:kkkmiuiios:grap  miuiios:eee    miuiios:la miuiios:mc账户密码均为qwe【冒号均是英文冒号】免费星空私人账号点我加入联机群私聊群主和管理员@煞笔宣言（ioip）进行开通，开通格式用户名+用户密码+QQ号【用户名需要大于四位且为数字和字母】，在QQ里找群或@煞笔宣言（ioip）私信发就行开通成功后请加入统计群点我加入统计群注意事项因为用的是原版联机所以不防外挂!且主机方【开房间的玩家】和联机方【进入房间的玩家】不能使用同一账号联机方可登同一账号3.如图所示打开星空，点击图标开启星空，图标变成蓝色即可，将星空主界面显示的ip【例如我的是192.168.188.44】记住做完这一步恭喜你配置好了，请直接看联机篇点我前往联机篇  安...</div></div></div></div><nav id="pagination"><div class="pagination"><a class="extend prev" rel="prev" href="/page/2/#content-inner"><i class="fas fa-chevron-left fa-fw"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/#content-inner">2</a><span class="page-number current">3</span></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/d.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">ioip</div><div class="author-info-description">午梦千山，窗阴一箭</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">27</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">6</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">7</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://win10ios.github.io/"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/win10ios" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a><a class="social-icon" href="mailto:3519823556@qq.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #4a7dbe;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">时光之味，日月沉香</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/08/24/%E5%9C%A8CentOS%207.6%E4%B8%8A%E7%BC%96%E8%AF%91%E5%AE%89%E8%A3%85Python%203.8%E5%AE%8C%E6%95%B4%E6%8C%87%E5%8D%97/" title="在CentOS 7.6上编译安装Python 3.8完整指南">在CentOS 7.6上编译安装Python 3.8完整指南</a><time datetime="2025-08-24T18:47:32.000Z" title="发表于 2025-08-24 18:47:32">2025-08-24</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/08/14/mcsmanager%E4%B8%AD%E7%9A%84Dockerfile%E7%BC%96%E5%86%99/" title="mcsmanager中的Dockerfile编写">mcsmanager中的Dockerfile编写</a><time datetime="2025-08-14T23:57:39.000Z" title="发表于 2025-08-14 23:57:39">2025-08-14</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/08/09/butterfly%E4%B8%BB%E9%A2%98%E5%9C%A8hexo%E4%B8%AD%E7%9A%84%E9%85%8D%E7%BD%AE/" title="butterfly主题在hexo中的配置">butterfly主题在hexo中的配置</a><time datetime="2025-08-09T21:03:13.000Z" title="发表于 2025-08-09 21:03:13">2025-08-09</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/08/09/%E4%BD%BF%E7%94%A8github%20actions%E9%83%A8%E7%BD%B2hexo%E5%8D%9A%E5%AE%A2/" title="使用 GitHub Actions 部署 Hexo 博客">使用 GitHub Actions 部署 Hexo 博客</a><time datetime="2025-08-09T21:03:13.000Z" title="发表于 2025-08-09 21:03:13">2025-08-09</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/07/29/%E8%B9%A6%E8%B9%A6%E5%BA%8A%E5%A4%A7%E5%B0%8F%E5%A7%90%E9%A9%BE%E5%88%B0/" title="蹦蹦床大小姐驾到？">蹦蹦床大小姐驾到？</a><time datetime="2025-07-29T21:03:13.000Z" title="发表于 2025-07-29 21:03:13">2025-07-29</time></div></div></div></div><div class="card-widget card-categories"><div class="item-headline">
+            <i class="fas fa-folder-open"></i>
+            <span>分类</span>
+            
+          </div>
+          <ul class="card-category-list" id="aside-cat-list">
+            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/mc%E6%95%99%E7%A8%8B/"><span class="card-category-list-name">mc教程</span><span class="card-category-list-count">4</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/web/"><span class="card-category-list-name">web</span><span class="card-category-list-count">4</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E6%95%A3%E6%96%87/"><span class="card-category-list-name">散文</span><span class="card-category-list-count">10</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E6%9D%82%E8%B0%88/"><span class="card-category-list-name">杂谈</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BA/"><span class="card-category-list-name">网站搭建</span><span class="card-category-list-count">2</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E8%AF%97%E6%AD%8C/"><span class="card-category-list-name">诗歌</span><span class="card-category-list-count">5</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E9%97%B2%E7%AC%94/"><span class="card-category-list-name">闲笔</span><span class="card-category-list-count">1</span></a></li>
+          </ul></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/%E6%9D%82%E8%B0%88/" style="font-size: 1.1em; color: #999">杂谈</a> <a href="/tags/web/" style="font-size: 1.4em; color: #99a5b6">web</a> <a href="/tags/%E8%AF%97%E6%AD%8C/" style="font-size: 1.3em; color: #99a1ac">诗歌</a> <a href="/tags/mc/" style="font-size: 1.2em; color: #999da3">mc</a> <a href="/tags/%E9%97%B2%E7%AC%94/" style="font-size: 1.1em; color: #999">闲笔</a> <a href="/tags/%E6%95%A3%E6%96%87/" style="font-size: 1.5em; color: #99a9bf">散文</a></div></div><div class="card-widget card-archives">
+    <div class="item-headline">
+      <i class="fas fa-archive"></i>
+      <span>归档</span>
+      <a class="card-more-btn" href="/archives/"
+            title="查看更多">
+            <i class="fas fa-angle-right"></i>
+          </a>
+    </div>
+  
+    <ul class="card-archive-list">
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2025/08/">
+            <span class="card-archive-list-date">
+              八月 2025
+            </span>
+            <span class="card-archive-list-count">4</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2025/07/">
+            <span class="card-archive-list-date">
+              七月 2025
+            </span>
+            <span class="card-archive-list-count">3</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2025/06/">
+            <span class="card-archive-list-date">
+              六月 2025
+            </span>
+            <span class="card-archive-list-count">6</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2025/05/">
+            <span class="card-archive-list-date">
+              五月 2025
+            </span>
+            <span class="card-archive-list-count">4</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2025/04/">
+            <span class="card-archive-list-date">
+              四月 2025
+            </span>
+            <span class="card-archive-list-count">1</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2025/02/">
+            <span class="card-archive-list-date">
+              二月 2025
+            </span>
+            <span class="card-archive-list-count">1</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2024/11/">
+            <span class="card-archive-list-date">
+              十一月 2024
+            </span>
+            <span class="card-archive-list-count">1</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2024/10/">
+            <span class="card-archive-list-date">
+              十月 2024
+            </span>
+            <span class="card-archive-list-count">1</span>
+          </a>
+        </li>
+      
+    </ul>
+  </div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站信息</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">27</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总浏览量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2025-10-19T04:03:15.205Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2020 - 2025 By ioip</span></div><div class="footer_custom_text"><a href="https://icp.gov.moe/?keyword=20240611" target="_blank">萌ICP备20240611号</a> 2024 - 2025 © <a href="https://blog.999845.xyz" target="_blank">长夜小屋</a>丨技术支持：<a href="https://blog.xp6.top" target="_blank">xiapi</a>
+</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.4.3"></script><script src="/js/main.js?v=5.4.3"></script><script src="/js/tw_cn.js?v=5.4.3"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
